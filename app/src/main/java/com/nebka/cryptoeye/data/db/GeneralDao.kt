@@ -11,16 +11,17 @@ interface GeneralDao
  *
  * @param block will execute related method
  * @param onError will be called whenever exceptions occur
+ *
+ * @return [DatabaseResult]
  */
-inline fun <T : GeneralDao, R> T.executeQuery(
+inline fun <T : GeneralDao, R : Any> T.executeQuery(
     block: T.() -> R,
     onError: (String?) -> Unit = {}
-): R? {
-
-    return try {
-        block()
-    } catch (e: Exception) {
-        onError(e.message)
-        null
+): DatabaseResult<R> = try {
+    block().let {
+        DatabaseResult.Success(it)
     }
+} catch (e: Exception) {
+    onError(e.message)
+    DatabaseResult.Error(e.message)
 }
