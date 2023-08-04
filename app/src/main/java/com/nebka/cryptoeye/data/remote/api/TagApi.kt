@@ -1,7 +1,7 @@
 package com.nebka.cryptoeye.data.remote.api
 
 import com.nebka.cryptoeye.data.remote.models.GeneralResponse
-import com.nebka.cryptoeye.data.remote.models.TagResponse
+import com.nebka.cryptoeye.data.remote.models.TagArrayResponse
 import com.nebka.cryptoeye.data.remote.models.TagsRequestBody
 import com.nebka.cryptoeye.data.remote.models.UpdateTimeResponse
 import retrofit2.Response
@@ -17,5 +17,5 @@ interface TagApi {
     @POST("v2/tags")
     suspend fun getTagList(
         @Body tagsRequestBody: TagsRequestBody
-    ): Response<GeneralResponse<List<TagResponse>>>
+    ): Response<GeneralResponse<TagArrayResponse>>
 }

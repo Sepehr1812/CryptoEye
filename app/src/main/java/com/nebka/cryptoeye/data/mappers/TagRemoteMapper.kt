@@ -5,5 +5,6 @@ import com.nebka.cryptoeye.data.remote.models.TagResponse
 
 object TagRemoteMapper {
 
-    fun toDomain(tagResponse: TagResponse) = tagResponse.run { Tag(id, name, symbol, logoUrl) }
+    fun toDomain(tagResponse: TagResponse) =
+        tagResponse.run { Tag(id, name, symbol ?: "", logoUrl ?: "") }
 }

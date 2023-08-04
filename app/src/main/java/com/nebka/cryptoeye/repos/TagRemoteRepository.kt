@@ -28,7 +28,7 @@ class TagRemoteRepository @Inject constructor(
             )
         )
     }, caster = {
-        it.result.map { tagResponse -> TagRemoteMapper.toDomain(tagResponse) }
+        it.result.tags.map { tagResponse -> TagRemoteMapper.toDomain(tagResponse) }
     }, onError = {
         Log.d("Remote::getTagList", it.toString())
     })
