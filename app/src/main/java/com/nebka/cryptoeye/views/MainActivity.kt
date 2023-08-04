@@ -1,4 +1,4 @@
-package com.nebka.cryptoeye
+package com.nebka.cryptoeye.views
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
