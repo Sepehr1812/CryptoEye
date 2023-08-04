@@ -12,7 +12,7 @@ import com.nebka.cryptoeye.data.db.entities.TagEntity
 interface TagDao : GeneralDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addTagList(tagList: List<TagEntity>): Unit?
+    suspend fun addTagList(tagList: List<TagEntity>)
 
     @Query("SELECT * FROM tag ORDER BY id")
     suspend fun getTagList(): List<TagEntity>
