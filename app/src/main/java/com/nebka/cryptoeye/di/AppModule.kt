@@ -1,12 +1,19 @@
 package com.nebka.cryptoeye.di
 
 import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
+import androidx.datastore.preferences.core.PreferenceDataStoreFactory
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.preferencesDataStoreFile
 import androidx.room.Room
 import com.nebka.cryptoeye.BuildConfig
 import com.nebka.cryptoeye.data.db.CryptoEyeDatabase
 import com.nebka.cryptoeye.data.remote.api.TagApi
 import com.nebka.cryptoeye.util.Constants.AUTHENTICATION_TOKEN
 import com.nebka.cryptoeye.util.Constants.BASE_URL
+import com.nebka.cryptoeye.util.Constants.USER_PREFERENCES_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -77,4 +84,14 @@ object AppModule {
     @Singleton
     @Provides
     fun provideTagDao(cryptoEyeDatabase: CryptoEyeDatabase) = cryptoEyeDatabase.tagDao()
+
+    @Singleton
+    @Provides
+    fun providePreferencesDataStore(@ApplicationContext appContext: Context): DataStore<Preferences> =
+        PreferenceDataStoreFactory.create(
+            corruptionHandler = ReplaceFileCorruptionHandler(
+                produceNewData = { emptyPreferences() }
+            ),
+            produceFile = { appContext.preferencesDataStoreFile(USER_PREFERENCES_NAME) }
+        )
 }
