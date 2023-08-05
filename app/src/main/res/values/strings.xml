@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CryptoEye</string>
+
+    <string name="search_tags">Search tags…</string>
+    <string name="search_icon_desc">Search Icon</string>
+    <string name="close_icon_desc">Close Icon</string>
+    <string name="history_icon_desc">History Icon</string>
+    <string name="tag_logo_desc">Tag Logo</string>
+    <string name="no_tags_to_show">No tags to show.</string>
 </resources>

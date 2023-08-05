@@ -6,4 +6,8 @@ object Constants {
     const val AUTHENTICATION_TOKEN = "Token 92335ad1961315d0f8db29d33b8ac05f5b080b44"
 
     const val USER_PREFERENCES_NAME = "CryptoEyePreferences"
+
+    // routes
+    const val SPLASH_SCREEN = "SplashScreen"
+    const val SEARCH_SCREEN = "SearchScreen"
 }
