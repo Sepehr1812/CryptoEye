@@ -68,6 +68,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
     implementation("androidx.navigation:navigation-compose:2.6.0")
 
     implementation("com.google.dagger:hilt-android:2.44")
@@ -83,6 +85,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.4.0")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.1")
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.1")
+
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
