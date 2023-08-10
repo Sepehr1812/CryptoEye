@@ -15,6 +15,8 @@ A tag can be one of the following items:
 ## Architecture and Technologies
 In this project, I benefited from several Android concepts and libraries, including:
 * Jetpack Compose
+* Coroutines
+* Flows
 * Room
 * Retrofit
 * Hilt
